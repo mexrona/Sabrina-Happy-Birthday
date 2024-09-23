@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+
+    background-color: #dbb0f9;
+    background-size: cover;
+    overflow: hidden;
+    perspective: 1000px;
+
+    font-family: "Caveat", cursive;
+}
+
+.dot {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background: url("img/logo.png");
+    background-size: 100% 100%;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#petals {
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    width: fit-content;
+    height: auto;
+    padding: 15px 60px 15px 30px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    transform-style: preserve-3d;
+    perspective: 200px;
+    opacity: 0;
+    background: url("img/background.jpg");
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    transform: translate3d(-45%, -50%, 0) rotateY(30deg);
+    animation: card 2s linear 2s forwards;
+}
+
+.title {
+    width: max-content;
+    margin-bottom: 10px;
+
+    color: #fff;
+    font-size: 80px;
+    font-size: calc(24px + 56 * (100vw / 1470));
+    line-height: 1;
+}
+
+.text {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+
+    color: #fff;
+    font-size: 35px;
+    font-size: calc(21px + 14 * (100vw / 1470));
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.author {
+    opacity: 0;
+
+    color: #fff;
+    font-size: 30px;
+    font-size: calc(18px + 12 * (100vw / 1470));
+    text-align: right;
+
+    transition: opacity 1s linear;
+}
+
+@keyframes card {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    right: -200px;
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 53px;
+        font-size: calc(24px + (56 + 56 * 0.7) * ((100vw - 280px) / 1470));
+    }
+
+    .text {
+        font-size: 28px;
+        font-size: calc(21px + (14 + 14 * 0.7) * ((100vw - 280px) / 1470));
+    }
+
+    .author {
+        font-size: 24px;
+        font-size: calc(18px + (12 + 12 * 0.7) * ((100vw - 280px) / 1470));
+    }
+}
